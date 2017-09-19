@@ -4,9 +4,15 @@
 
 import("urban")
 
-scenario = UrbanSprawl{transportCost=50}
+scenario = UrbanSprawl{}
 
-local map2 = Map{target = scenario.city, select = "meanIncome", color = {"black","yellow","white"}, slices=12, grid=true}
-scenario.timer:add(Event{action=map2})
+local map2 = Map{
+	target = scenario.city,
+	select = "meanIncome",
+	color = {"black", "yellow", "white"},
+	slices = 10,
+	grid = true
+}
+scenario.timer:add(Event{action = map2})
 
 scenario:run()
